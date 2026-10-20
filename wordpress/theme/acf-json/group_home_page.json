@@ -1,0 +1,571 @@
+{
+  "key": "group_home_page",
+  "title": "Page d'accueil",
+  "fields": [
+    {
+      "key": "field_home_page_sections_flex",
+      "label": "Page Sections",
+      "name": "sections",
+      "type": "flexible_content",
+      "acfe_flexible_advanced": 1,
+      "acfe_flexible_copy_paste": 1,
+      "acfe_flexible_control": 1,
+      "acfe_flexible_duplicate": 1,
+      "acfe_flexible_layouts_templates": 1,
+      "acfe_flexible_layouts_previews": 1,
+      "layouts": [
+        {
+          "key": "layout_home_page_home_hero",
+          "name": "home_hero",
+          "label": "Accueil — Hero",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/home_hero.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_home_page_home_hero_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_home_hero_headline",
+              "label": "Titre principal",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_home_hero_description",
+              "label": "Texte de positionnement",
+              "name": "description",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_home_hero_actions",
+              "name": "actions",
+              "label": "Actions",
+              "type": "repeater",
+              "required": false,
+              "layout": "block",
+              "button_label": "Ajouter une action",
+              "sub_fields": [
+                {
+                  "key": "field_home_page_home_hero_actions_action",
+                  "label": "Action",
+                  "name": "action",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_bws_action_link"
+                  ],
+                  "display": "seamless",
+                  "prefix_name": 0,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            },
+            {
+              "key": "field_home_page_home_hero_image",
+              "name": "image",
+              "label": "Image principale",
+              "type": "image",
+              "required": false,
+              "return_format": "array",
+              "preview_size": "large"
+            },
+            {
+              "key": "field_home_page_home_hero_imageCaption",
+              "label": "Légende de l'image",
+              "name": "imageCaption",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            }
+          ]
+        },
+        {
+          "key": "layout_home_page_practice_introduction",
+          "name": "practice_introduction",
+          "label": "Accueil — Présentation du cabinet",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/practice_introduction.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_home_page_practice_introduction_indexLabel",
+              "label": "Repère",
+              "name": "indexLabel",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_practice_introduction_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_practice_introduction_image",
+              "name": "image",
+              "label": "Image du cabinet",
+              "type": "image",
+              "required": false,
+              "return_format": "array",
+              "preview_size": "large"
+            },
+            {
+              "key": "field_home_page_practice_introduction_imageCaption",
+              "label": "Légende",
+              "name": "imageCaption",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_practice_introduction_paragraphs",
+              "name": "paragraphs",
+              "label": "Paragraphes",
+              "type": "repeater",
+              "required": false,
+              "min": 1,
+              "max": 3,
+              "layout": "block",
+              "button_label": "Ajouter un paragraphe",
+              "sub_fields": [
+                {
+                  "key": "field_home_page_practice_introduction_paragraphs_text",
+                  "label": "Texte",
+                  "name": "text",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_text_primitive"
+                  ],
+                  "display": "group",
+                  "prefix_name": 1,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            },
+            {
+              "key": "field_home_page_practice_introduction_agencyAction",
+              "label": "Lien vers le cabinet",
+              "name": "agencyAction",
+              "type": "clone",
+              "clone": [
+                "group_lib_bws_action_link"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            }
+          ]
+        },
+        {
+          "key": "layout_home_page_expertise_overview",
+          "name": "expertise_overview",
+          "label": "Accueil — Expertises",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/expertise_overview.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_home_page_expertise_overview_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_expertise_overview_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_expertise_overview_introduction",
+              "label": "Introduction",
+              "name": "introduction",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_expertise_overview_items",
+              "name": "items",
+              "label": "Expertises",
+              "type": "repeater",
+              "required": false,
+              "min": 1,
+              "max": 8,
+              "layout": "block",
+              "button_label": "Ajouter une expertise",
+              "sub_fields": [
+                {
+                  "key": "field_home_page_expertise_overview_items_itemFields",
+                  "label": "Contenu",
+                  "name": "itemFields",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_bws_expertise_item_molecule"
+                  ],
+                  "display": "seamless",
+                  "prefix_name": 0,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "layout_home_page_project_gallery",
+          "name": "project_gallery",
+          "label": "Accueil — Réalisations",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/project_gallery.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_home_page_project_gallery_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_project_gallery_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_project_gallery_introduction",
+              "label": "Introduction",
+              "name": "introduction",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_project_gallery_projects",
+              "name": "projects",
+              "label": "Projets",
+              "type": "repeater",
+              "required": false,
+              "min": 1,
+              "max": 12,
+              "layout": "block",
+              "button_label": "Ajouter un projet",
+              "sub_fields": [
+                {
+                  "key": "field_home_page_project_gallery_projects_projectFields",
+                  "label": "Contenu",
+                  "name": "projectFields",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_bws_project_tile_molecule"
+                  ],
+                  "display": "seamless",
+                  "prefix_name": 0,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "layout_home_page_architectural_approach",
+          "name": "architectural_approach",
+          "label": "Accueil — Approche architecturale",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/architectural_approach.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_home_page_architectural_approach_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_architectural_approach_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_architectural_approach_introduction",
+              "label": "Introduction",
+              "name": "introduction",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_architectural_approach_principles",
+              "name": "principles",
+              "label": "Principes",
+              "type": "repeater",
+              "required": false,
+              "min": 1,
+              "max": 6,
+              "layout": "block",
+              "button_label": "Ajouter un principe",
+              "sub_fields": [
+                {
+                  "key": "field_home_page_architectural_approach_principles_principleFields",
+                  "label": "Contenu",
+                  "name": "principleFields",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_bws_approach_step_molecule"
+                  ],
+                  "display": "seamless",
+                  "prefix_name": 0,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "layout_home_page_project_invitation",
+          "name": "project_invitation",
+          "label": "Accueil — Échange",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/project_invitation.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_home_page_project_invitation_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_project_invitation_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_project_invitation_description",
+              "label": "Description",
+              "name": "description",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_project_invitation_image",
+              "name": "image",
+              "label": "Image architecturale",
+              "type": "image",
+              "required": false,
+              "return_format": "array",
+              "preview_size": "large"
+            },
+            {
+              "key": "field_home_page_project_invitation_imageCaption",
+              "label": "Légende de l'image",
+              "name": "imageCaption",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_home_page_project_invitation_contactItems",
+              "name": "contactItems",
+              "label": "Coordonnées",
+              "type": "repeater",
+              "required": false,
+              "min": 1,
+              "max": 4,
+              "layout": "block",
+              "button_label": "Ajouter une coordonnée",
+              "sub_fields": [
+                {
+                  "key": "field_home_page_project_invitation_contactItems_contactFields",
+                  "label": "Contenu",
+                  "name": "contactFields",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_bws_contact_channel_molecule"
+                  ],
+                  "display": "seamless",
+                  "prefix_name": 0,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            },
+            {
+              "key": "field_home_page_project_invitation_submitLabel",
+              "name": "submitLabel",
+              "label": "Libellé du bouton",
+              "type": "text",
+              "required": false
+            },
+            {
+              "key": "field_home_page_project_invitation_privacyNote",
+              "label": "Note de confidentialité",
+              "name": "privacyNote",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "template-home.php"
+      }
+    ]
+  ],
+  "show_in_rest": true,
+  "modified": 1792514841
+}

@@ -1,0 +1,76 @@
+{
+  "key": "group_lib_bws_contact_channel_molecule",
+  "title": "[LIB] bws_contact_channel_molecule",
+  "fields": [
+    {
+      "key": "field_bws_contact_channel_molecule_icon",
+      "name": "icon",
+      "label": "Icône",
+      "type": "select",
+      "required": false,
+      "choices": {
+        "ArrowRight": "Arrow right",
+        "ArrowUpRight": "Arrow up right",
+        "Building2": "Building",
+        "Clock": "Opening hours",
+        "Compass": "Context",
+        "Layers3": "Layers",
+        "Mail": "Email",
+        "MapPin": "Location",
+        "Move3d": "Volume",
+        "Phone": "Phone",
+        "Route": "Movement",
+        "Send": "Send",
+        "Sun": "Natural light",
+        "TimerReset": "Longevity"
+      },
+      "ui": 1,
+      "allow_null": 1,
+      "wrapper": {
+        "class": "atelier-icon-picker"
+      }
+    },
+    {
+      "key": "field_bws_contact_channel_molecule_title",
+      "label": "Titre",
+      "name": "title",
+      "type": "clone",
+      "clone": [
+        "group_lib_heading_primitive"
+      ],
+      "display": "group",
+      "prefix_name": 1,
+      "prefix_label": 0,
+      "required": 0
+    },
+    {
+      "key": "field_bws_contact_channel_molecule_details",
+      "label": "Détails",
+      "name": "details",
+      "type": "clone",
+      "clone": [
+        "group_lib_text_primitive"
+      ],
+      "display": "group",
+      "prefix_name": 1,
+      "prefix_label": 0,
+      "required": 0
+    },
+    {
+      "key": "field_bws_contact_channel_molecule_destination",
+      "label": "Destination",
+      "name": "destination",
+      "type": "clone",
+      "clone": [
+        "group_lib_bws_action_link"
+      ],
+      "display": "group",
+      "prefix_name": 1,
+      "prefix_label": 0,
+      "required": 0
+    }
+  ],
+  "active": false,
+  "show_in_rest": true,
+  "modified": 1792514841
+}

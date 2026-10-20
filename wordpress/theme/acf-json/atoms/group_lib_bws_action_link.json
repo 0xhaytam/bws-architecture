@@ -1,0 +1,120 @@
+{
+  "key": "group_lib_bws_action_link",
+  "title": "[LIB] bws_action_link",
+  "fields": [
+    {
+      "key": "field_bws_action_link_intent",
+      "name": "intent",
+      "label": "Apparence",
+      "type": "select",
+      "required": false,
+      "default_value": "primary",
+      "allow_null": false,
+      "ui": false,
+      "wrapper": {
+        "width": "20%",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "primary": "primary",
+        "secondary": "secondary"
+      }
+    },
+    {
+      "key": "field_bws_action_link_destinationType",
+      "name": "destinationType",
+      "label": "Type de destination",
+      "type": "button_group",
+      "required": false,
+      "default_value": "internal",
+      "wrapper": {
+        "width": "25%",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "internal": "Page interne",
+        "external": "Lien externe"
+      },
+      "layout": "horizontal",
+      "return_format": "value"
+    },
+    {
+      "key": "field_bws_action_link_internalPage",
+      "name": "internalPage",
+      "label": "Page interne",
+      "type": "post_object",
+      "instructions": "Sélectionne une page WordPress existante. Les fichiers template-*.php ne créent pas automatiquement les pages.",
+      "required": false,
+      "return_format": "id",
+      "allow_null": true,
+      "ui": true,
+      "post_type": [
+        "page"
+      ],
+      "wrapper": {
+        "width": "30%",
+        "class": "",
+        "id": ""
+      },
+      "conditional_logic": [
+        [
+          {
+            "field": "field_bws_action_link_destinationType",
+            "operator": "==",
+            "value": "internal"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_bws_action_link_internalLabel",
+      "name": "internalLabel",
+      "label": "Libellé",
+      "type": "text",
+      "instructions": "Optionnel. Le titre de la page sélectionnée est utilisé si ce champ reste vide.",
+      "required": false,
+      "wrapper": {
+        "width": "25%",
+        "class": "",
+        "id": ""
+      },
+      "conditional_logic": [
+        [
+          {
+            "field": "field_bws_action_link_destinationType",
+            "operator": "==",
+            "value": "internal"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_bws_action_link_externalLink",
+      "name": "externalLink",
+      "label": "Lien externe",
+      "type": "link",
+      "instructions": "Le libellé se renseigne dans le champ Texte du lien.",
+      "required": false,
+      "return_format": "array",
+      "wrapper": {
+        "width": "55%",
+        "class": "",
+        "id": ""
+      },
+      "conditional_logic": [
+        [
+          {
+            "field": "field_bws_action_link_destinationType",
+            "operator": "==",
+            "value": "external"
+          }
+        ]
+      ]
+    }
+  ],
+  "active": false,
+  "show_in_rest": true,
+  "modified": 1792514841
+}

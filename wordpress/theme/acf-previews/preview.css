@@ -1,0 +1,457 @@
+.atelier-preview {
+  --atelier-preview-border: #dcdcde;
+  --atelier-preview-muted: #646970;
+  --atelier-preview-surface: #f6f7f7;
+  overflow: hidden;
+  border: 1px solid var(--atelier-preview-border);
+  border-radius: 9px;
+  background: #fff;
+  color: #1d2327;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.atelier-preview *,
+.atelier-preview *::before,
+.atelier-preview *::after {
+  box-sizing: border-box;
+}
+
+.atelier-preview__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 15px;
+  border-bottom: 1px solid #e2e4e7;
+  background: var(--atelier-preview-surface);
+}
+
+.atelier-preview__eyebrow,
+.atelier-preview__layout-name {
+  color: var(--atelier-preview-muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.atelier-preview__title {
+  font-size: 14px;
+}
+
+.atelier-preview__layout-name {
+  padding: 3px 7px;
+  border: 1px solid #dcdcde;
+  border-radius: 999px;
+  background: #fff;
+  letter-spacing: 0.03em;
+}
+
+.atelier-preview__key {
+  margin-left: auto;
+  color: var(--atelier-preview-muted);
+  font-size: 11px;
+}
+
+.atelier-preview__layout {
+  display: grid;
+  min-height: 170px;
+}
+
+.atelier-preview--stack .atelier-preview__layout {
+  grid-template-columns: 1fr;
+}
+
+.atelier-preview--split .atelier-preview__layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.atelier-preview--grid .atelier-preview__layout {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.atelier-preview__region {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+}
+
+.atelier-preview__region + .atelier-preview__region {
+  border-left: 1px dashed #c3c4c7;
+}
+
+.atelier-preview__region--media {
+  background: #f0f2f3;
+}
+
+.atelier-preview__region--aside {
+  background: #fbfbfc;
+}
+
+.atelier-preview__field {
+  min-width: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: outline-color 120ms ease;
+}
+
+.atelier-preview__field:hover,
+.atelier-preview__field:focus-visible {
+  outline-color: #72aee6;
+}
+
+/*
+ * ACF Extended places a full-size overlay and edit button above dynamic
+ * previews. Let pointer events reach the schema-bound preview fields instead.
+ * The click still bubbles to .acfe-fc-placeholder, so ACFE opens the layout.
+ */
+.layout > .acfe-fc-placeholder.acfe-fc-preview > .acfe-fc-overlay,
+.layout > .acfe-fc-placeholder.acfe-fc-preview > a {
+  pointer-events: none !important;
+}
+
+.layout > .acfe-fc-placeholder.acfe-fc-preview:hover > .acfe-fc-overlay {
+  z-index: auto !important;
+  background-color: transparent !important;
+}
+
+.layout > .acfe-fc-placeholder.acfe-fc-preview:hover > a {
+  display: none !important;
+}
+
+.acf-field.atelier-preview-target {
+  animation: atelier-preview-target-pulse 1.4s ease-out;
+}
+
+@keyframes atelier-preview-target-pulse {
+  0%, 35% {
+    box-shadow: 0 0 0 3px #72aee6;
+  }
+  100% {
+    box-shadow: 0 0 0 3px transparent;
+  }
+}
+
+.atelier-preview__text {
+  padding: 9px 10px;
+  border: 1px solid #e2e4e7;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.atelier-preview__field-label {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 4px;
+  color: var(--atelier-preview-muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.atelier-preview__text p {
+  margin: 0;
+  color: #2c3338;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.atelier-preview__text--primary {
+  border: 0;
+  padding: 0 0 6px;
+}
+
+.atelier-preview__text--primary p {
+  font-family: Georgia, serif;
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.atelier-preview__media-card {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid #d4d7da;
+  border-radius: 6px;
+  background: #e5e8ea;
+}
+
+.atelier-preview__media-card img,
+.atelier-preview__media-placeholder {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.atelier-preview__media-placeholder {
+  background:
+    linear-gradient(135deg, transparent 48%, #c9ced2 49%, #c9ced2 51%, transparent 52%),
+    linear-gradient(45deg, transparent 48%, #d4d8db 49%, #d4d8db 51%, transparent 52%);
+  background-color: #e7eaec;
+  background-size: 32px 32px;
+}
+
+.atelier-preview__media-card figcaption {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  padding: 3px 6px;
+  border-radius: 3px;
+  background: rgba(29, 35, 39, 0.78);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.atelier-preview__collection {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #dcdcde;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.atelier-preview__collection-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+
+.atelier-preview__collection-header strong {
+  font-size: 11px;
+}
+
+.atelier-preview__collection-header span,
+.atelier-preview__collection-footer {
+  color: var(--atelier-preview-muted);
+  font-size: 10px;
+}
+
+.atelier-preview__collection-items {
+  display: grid;
+  gap: 7px;
+}
+
+.atelier-preview__collection--grid .atelier-preview__collection-items,
+.atelier-preview__collection--carousel .atelier-preview__collection-items,
+.atelier-preview__collection--logos .atelier-preview__collection-items {
+  grid-template-columns: repeat(var(--atelier-preview-columns, 3), minmax(0, 1fr));
+}
+
+.atelier-preview__collection--list .atelier-preview__collection-items,
+.atelier-preview__collection--accordion .atelier-preview__collection-items,
+.atelier-preview__collection--timeline .atelier-preview__collection-items {
+  grid-template-columns: 1fr;
+}
+
+.atelier-preview__collection--tabs .atelier-preview__collection-items {
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(80px, 1fr);
+  overflow: hidden;
+}
+
+.atelier-preview__collection-item {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 7px;
+  border: 1px solid #e2e4e7;
+  border-radius: 4px;
+  background: #f9f9f9;
+}
+
+.atelier-preview__collection--grid .atelier-preview__collection-item,
+.atelier-preview__collection--carousel .atelier-preview__collection-item {
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.atelier-preview__collection--logos .atelier-preview__collection-item {
+  justify-content: center;
+  min-height: 52px;
+  text-align: center;
+}
+
+.atelier-preview__collection--timeline .atelier-preview__collection-item {
+  margin-left: 9px;
+  border-left: 2px solid #8c8f94;
+}
+
+.atelier-preview__item-image,
+.atelier-preview__item-media {
+  display: block;
+  width: 100%;
+  height: 44px;
+  flex: 0 0 auto;
+  border-radius: 3px;
+  background: #dde1e4;
+  object-fit: cover;
+}
+
+.atelier-preview__collection--list .atelier-preview__item-image,
+.atelier-preview__collection--accordion .atelier-preview__item-image,
+.atelier-preview__collection--timeline .atelier-preview__item-image,
+.atelier-preview__collection--logos .atelier-preview__item-image,
+.atelier-preview__collection--logos .atelier-preview__item-media {
+  width: 34px;
+  height: 28px;
+}
+
+.atelier-preview__item-text {
+  overflow: hidden;
+  color: #2c3338;
+  font-size: 11px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+}
+
+.atelier-preview__chevron {
+  margin-left: auto;
+  color: var(--atelier-preview-muted);
+  font-size: 16px;
+}
+
+.atelier-preview__step {
+  display: inline-grid;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #2c3338;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.atelier-preview__collection-footer {
+  margin-top: 8px;
+  text-align: right;
+}
+
+.atelier-preview__carousel-arrow {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  z-index: 1;
+  display: grid;
+  width: 20px;
+  height: 28px;
+  place-items: center;
+  border: 1px solid #c3c4c7;
+  border-radius: 3px;
+  background: #fff;
+  color: #50575e;
+  transform: translate(-50%, -10%);
+}
+
+.atelier-preview__carousel-arrow--next {
+  right: 2px;
+  left: auto;
+  transform: translate(50%, -10%);
+}
+
+.atelier-preview__form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #c3c4c7;
+  border-radius: 6px;
+  background: #fbfbfc;
+}
+
+.atelier-preview__form-title,
+.atelier-preview__form-field--wide,
+.atelier-preview__form-button {
+  grid-column: 1 / -1;
+}
+
+.atelier-preview__form-title {
+  color: var(--atelier-preview-muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.atelier-preview__form-field {
+  min-height: 32px;
+  padding: 8px;
+  border: 1px solid #dcdcde;
+  border-radius: 4px;
+  background: #fff;
+  color: #8c8f94;
+  font-size: 10px;
+}
+
+.atelier-preview__form-field--wide {
+  min-height: 58px;
+}
+
+.atelier-preview__form-button {
+  width: fit-content;
+  padding: 7px 12px;
+  border-radius: 4px;
+  background: #2c3338;
+  color: #fff;
+  font-size: 10px;
+}
+
+@media (max-width: 960px) {
+  .atelier-preview--grid .atelier-preview__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .atelier-preview--grid .atelier-preview__region + .atelier-preview__region {
+    border-top: 1px dashed #c3c4c7;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 782px) {
+  .atelier-preview__header {
+    flex-wrap: wrap;
+  }
+
+  .atelier-preview__key {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .atelier-preview--split .atelier-preview__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .atelier-preview--split .atelier-preview__region + .atelier-preview__region {
+    border-top: 1px dashed #c3c4c7;
+    border-left: 0;
+  }
+
+  .atelier-preview__collection--grid .atelier-preview__collection-items,
+  .atelier-preview__collection--carousel .atelier-preview__collection-items,
+  .atelier-preview__collection--logos .atelier-preview__collection-items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.atelier-preview__icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 6px 0;
+  color: var(--atelier-preview-ink);
+}

@@ -1,0 +1,128 @@
+---
+import Layout from "@/src/layouts/Layout.astro";
+import { HomeHero } from "@/src/components/organisms/HomeHero";
+import { PracticeIntroduction } from "@/src/components/organisms/PracticeIntroduction";
+import { ExpertiseOverview } from "@/src/components/organisms/ExpertiseOverview";
+import { ProjectGallery } from "@/src/components/organisms/ProjectGallery";
+import { ArchitecturalApproach } from "@/src/components/organisms/ArchitecturalApproach";
+import { ProjectInvitation } from "@/src/components/organisms/ProjectInvitation";
+import { ExpertiseHero } from "@/src/components/organisms/ExpertiseHero";
+import { ExpertiseIntroduction } from "@/src/components/organisms/ExpertiseIntroduction";
+import { ExpertiseFocus } from "@/src/components/organisms/ExpertiseFocus";
+import { ExpertiseBenefits } from "@/src/components/organisms/ExpertiseBenefits";
+import { ProjectCallToAction } from "@/src/components/organisms/ProjectCallToAction";
+import { AgencyHero } from "@/src/components/organisms/AgencyHero";
+import { AgencyProfile } from "@/src/components/organisms/AgencyProfile";
+import { ArchitecturalVision } from "@/src/components/organisms/ArchitecturalVision";
+import { ContactHero } from "@/src/components/organisms/ContactHero";
+import { ProjectSubmission } from "@/src/components/organisms/ProjectSubmission";
+import { ContactDetails } from "@/src/components/organisms/ContactDetails";
+import { ContactLocation } from "@/src/components/organisms/ContactLocation";
+import { ContactReassurance } from "@/src/components/organisms/ContactReassurance";
+import {
+  homeHeroDemo,
+  practiceIntroductionDemo,
+  expertiseOverviewDemo,
+  projectGalleryDemo,
+  architecturalApproachDemo,
+  projectInvitationDemo,
+} from "@/src/demo/homepage";
+import {
+  villasHeroDemo,
+  villasIntroductionDemo,
+  villasFocusDemo,
+  villasProjectsDemo,
+  villasBenefitsDemo,
+  villasCallToActionDemo,
+} from "@/src/demo/expertisePage";
+import {
+  agencyHeroDemo,
+  agencyProfileDemo,
+  architecturalVisionDemo,
+  agencyProjectTypesDemo,
+  agencyApproachDemo,
+  agencyCallToActionDemo,
+} from "@/src/demo/agencyPage";
+import {
+  contactHeroDemo,
+  projectSubmissionDemo,
+  contactDetailsDemo,
+  contactProjectTypesDemo,
+  contactLocationDemo,
+  contactReassuranceDemo,
+} from "@/src/demo/contactPage";
+
+export function getStaticPaths() {
+  return import.meta.env.ENABLE_DEMO_PAGES === "true"
+    ? [
+        { params: { page: "accueil" } },
+        { params: { page: "agence" } },
+        { params: { page: "villas" } },
+        { params: { page: "contact" } },
+      ]
+    : [];
+}
+
+const { page } = Astro.params;
+const isHomepage = page === "accueil";
+const isAgency = page === "agence";
+const isVillas = page === "villas";
+const isContact = page === "contact";
+const pageTitle = isContact
+  ? "Aperçu Contact — BWS Architecture"
+  : isAgency
+    ? "Aperçu Agence — BWS Architecture"
+    : isVillas
+      ? "Aperçu Villas — BWS Architecture"
+      : "Aperçu Accueil — BWS Architecture";
+const pageDescription = isContact
+  ? "Aperçu fictif de développement du gabarit de page Contact BWS Architecture."
+  : isAgency
+    ? "Aperçu fictif de développement du gabarit de page Agence BWS Architecture."
+    : isVillas
+      ? "Aperçu fictif de développement du gabarit de page Expertise BWS Architecture."
+      : "Aperçu fictif de développement de la page d’accueil BWS Architecture.";
+---
+
+<Layout slug={`demo-${page}`} title={pageTitle} description={pageDescription} demo>
+  {isHomepage ? (
+    <>
+      <HomeHero {...homeHeroDemo} />
+      <PracticeIntroduction {...practiceIntroductionDemo} />
+      <ExpertiseOverview client:visible {...expertiseOverviewDemo} />
+      <ProjectGallery client:visible {...projectGalleryDemo} />
+      <ArchitecturalApproach client:visible {...architecturalApproachDemo} />
+      <ProjectInvitation client:visible {...projectInvitationDemo} />
+    </>
+  ) : null}
+  {isAgency ? (
+    <>
+      <AgencyHero {...agencyHeroDemo} />
+      <AgencyProfile {...agencyProfileDemo} />
+      <ArchitecturalVision {...architecturalVisionDemo} />
+      <ExpertiseOverview client:visible {...agencyProjectTypesDemo} />
+      <ArchitecturalApproach client:visible {...agencyApproachDemo} />
+      <ProjectCallToAction {...agencyCallToActionDemo} />
+    </>
+  ) : null}
+  {isVillas ? (
+    <>
+      <ExpertiseHero {...villasHeroDemo} />
+      <ExpertiseIntroduction {...villasIntroductionDemo} />
+      <ExpertiseFocus {...villasFocusDemo} />
+      <ProjectGallery client:visible {...villasProjectsDemo} />
+      <ExpertiseBenefits {...villasBenefitsDemo} />
+      <ProjectCallToAction {...villasCallToActionDemo} />
+    </>
+  ) : null}
+  {isContact ? (
+    <>
+      <ContactHero {...contactHeroDemo} />
+      <ProjectSubmission client:visible {...projectSubmissionDemo} />
+      <ContactDetails {...contactDetailsDemo} />
+      <ExpertiseOverview client:visible {...contactProjectTypesDemo} />
+      <ContactLocation {...contactLocationDemo} />
+      <ContactReassurance {...contactReassuranceDemo} />
+    </>
+  ) : null}
+</Layout>

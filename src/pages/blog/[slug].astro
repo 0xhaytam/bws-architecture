@@ -1,0 +1,22 @@
+---
+import { BlogArticle } from "@/src/components/organisms/BlogArticle";
+import Layout from "@/src/layouts/Layout.astro";
+import { getAllPosts, type RuntimePost } from "@/src/lib/wp/posts";
+
+export async function getStaticPaths() {
+  return (await getAllPosts()).map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as { post: RuntimePost };
+---
+
+<Layout
+  slug={post.wordpressUrl || `blog/${post.slug}`}
+  canonicalPath={`/blog/${post.slug}`}
+  title={`${post.title} | BWS Architecture`}
+>
+  <BlogArticle post={post} />
+</Layout>

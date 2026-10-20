@@ -1,0 +1,72 @@
+{
+  "ArrowRight": {
+    "file": "icons/arrow-right.svg",
+    "label": "Arrow right",
+    "library": "lucide"
+  },
+  "ArrowUpRight": {
+    "file": "icons/arrow-up-right.svg",
+    "label": "Arrow up right",
+    "library": "lucide"
+  },
+  "Building2": {
+    "file": "icons/building-2.svg",
+    "label": "Building",
+    "library": "lucide"
+  },
+  "Clock": {
+    "file": "icons/clock.svg",
+    "label": "Opening hours",
+    "library": "lucide"
+  },
+  "Compass": {
+    "file": "icons/compass.svg",
+    "label": "Context",
+    "library": "lucide"
+  },
+  "Layers3": {
+    "file": "icons/layers-3.svg",
+    "label": "Layers",
+    "library": "lucide"
+  },
+  "Mail": {
+    "file": "icons/mail.svg",
+    "label": "Email",
+    "library": "lucide"
+  },
+  "MapPin": {
+    "file": "icons/map-pin.svg",
+    "label": "Location",
+    "library": "lucide"
+  },
+  "Move3d": {
+    "file": "icons/move-3-d.svg",
+    "label": "Volume",
+    "library": "lucide"
+  },
+  "Phone": {
+    "file": "icons/phone.svg",
+    "label": "Phone",
+    "library": "lucide"
+  },
+  "Route": {
+    "file": "icons/route.svg",
+    "label": "Movement",
+    "library": "lucide"
+  },
+  "Send": {
+    "file": "icons/send.svg",
+    "label": "Send",
+    "library": "lucide"
+  },
+  "Sun": {
+    "file": "icons/sun.svg",
+    "label": "Natural light",
+    "library": "lucide"
+  },
+  "TimerReset": {
+    "file": "icons/timer-reset.svg",
+    "label": "Longevity",
+    "library": "lucide"
+  }
+}

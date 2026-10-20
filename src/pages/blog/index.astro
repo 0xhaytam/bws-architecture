@@ -1,0 +1,16 @@
+---
+import { BlogListing } from "@/src/components/organisms/BlogListing";
+import Layout from "@/src/layouts/Layout.astro";
+import { getPostsPage, POSTS_PER_PAGE } from "@/src/lib/wp/posts";
+
+const result = await getPostsPage(1, POSTS_PER_PAGE);
+---
+
+<Layout
+  slug="blog"
+  canonicalPath="/blog"
+  title="Blog | BWS Architecture"
+  description="Réflexions, conseils et lectures de projets par BWS Architecture."
+>
+  <BlogListing {...result} page={1} />
+</Layout>

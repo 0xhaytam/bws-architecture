@@ -1,0 +1,88 @@
+{
+  "key": "group_lib_heading_primitive",
+  "title": "[LIB] heading_primitive",
+  "fields": [
+    {
+      "key": "field_heading_primitive_content",
+      "name": "content",
+      "label": "Contenu",
+      "type": "text",
+      "instructions": "Utilisez <highlight>texte</highlight> pour appliquer la couleur d'accent.",
+      "required": false
+    },
+    {
+      "key": "field_heading_primitive_heading_primitive_advanced",
+      "name": "heading_primitive_advanced",
+      "label": "Advanced",
+      "type": "accordion",
+      "open": 0,
+      "multi_expand": 0
+    },
+    {
+      "key": "field_heading_primitive_as",
+      "name": "as",
+      "label": "Balise",
+      "type": "select",
+      "required": false,
+      "wrapper": {
+        "width": "33%",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "h1": "h1",
+        "h2": "h2",
+        "h3": "h3",
+        "h4": "h4",
+        "h5": "h5",
+        "h6": "h6"
+      },
+      "ui": 1,
+      "allow_null": 1
+    },
+    {
+      "key": "field_heading_primitive_level",
+      "name": "level",
+      "label": "Niveau visuel",
+      "type": "select",
+      "required": false,
+      "wrapper": {
+        "width": "33%",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "t1": "t1",
+        "t2": "t2",
+        "t3": "t3",
+        "t4": "t4",
+        "t5": "t5",
+        "t6": "t6"
+      },
+      "ui": 1,
+      "allow_null": 1
+    },
+    {
+      "key": "field_heading_primitive_justify",
+      "name": "justify",
+      "label": "Alignement",
+      "type": "select",
+      "required": false,
+      "wrapper": {
+        "width": "33%",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "start": "start",
+        "center": "center",
+        "end": "end"
+      },
+      "ui": 1,
+      "allow_null": 1
+    }
+  ],
+  "active": false,
+  "show_in_rest": true,
+  "modified": 1792514841
+}

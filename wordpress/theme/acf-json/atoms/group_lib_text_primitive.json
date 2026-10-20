@@ -1,0 +1,97 @@
+{
+  "key": "group_lib_text_primitive",
+  "title": "[LIB] text_primitive",
+  "fields": [
+    {
+      "key": "field_text_primitive_content",
+      "name": "content",
+      "label": "Contenu",
+      "type": "wysiwyg",
+      "required": false,
+      "tabs": "visual",
+      "toolbar": "basic",
+      "media_upload": false
+    },
+    {
+      "key": "field_text_primitive_text_primitive_advanced",
+      "name": "text_primitive_advanced",
+      "label": "Advanced",
+      "type": "accordion",
+      "open": 0,
+      "multi_expand": 0
+    },
+    {
+      "key": "field_text_primitive_as",
+      "name": "as",
+      "label": "Balise",
+      "type": "select",
+      "required": false,
+      "wrapper": {
+        "width": "25%",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "p": "p",
+        "span": "span"
+      },
+      "ui": 1,
+      "allow_null": 1
+    },
+    {
+      "key": "field_text_primitive_level",
+      "name": "level",
+      "label": "Niveau visuel",
+      "type": "select",
+      "required": false,
+      "wrapper": {
+        "width": "25%",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "p1": "p1",
+        "p2": "p2",
+        "p3": "p3",
+        "c1": "c1",
+        "c2": "c2"
+      },
+      "ui": 1,
+      "allow_null": 1
+    },
+    {
+      "key": "field_text_primitive_justify",
+      "name": "justify",
+      "label": "Alignement",
+      "type": "select",
+      "required": false,
+      "wrapper": {
+        "width": "25%",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "start": "start",
+        "center": "center",
+        "end": "end"
+      },
+      "ui": 1,
+      "allow_null": 1
+    },
+    {
+      "key": "field_text_primitive_muted",
+      "name": "muted",
+      "label": "Atténué",
+      "type": "true_false",
+      "required": false,
+      "wrapper": {
+        "width": "25%",
+        "class": "",
+        "id": ""
+      }
+    }
+  ],
+  "active": false,
+  "show_in_rest": true,
+  "modified": 1792514841
+}

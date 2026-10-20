@@ -1,0 +1,580 @@
+{
+  "key": "group_agency_page",
+  "title": "Page Agence",
+  "fields": [
+    {
+      "key": "field_agency_page_sections_flex",
+      "label": "Page Sections",
+      "name": "sections",
+      "type": "flexible_content",
+      "acfe_flexible_advanced": 1,
+      "acfe_flexible_copy_paste": 1,
+      "acfe_flexible_control": 1,
+      "acfe_flexible_duplicate": 1,
+      "acfe_flexible_layouts_templates": 1,
+      "acfe_flexible_layouts_previews": 1,
+      "layouts": [
+        {
+          "key": "layout_agency_page_agency_hero",
+          "name": "agency_hero",
+          "label": "Agence — Hero",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/agency_hero.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_agency_page_agency_hero_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_agency_hero_headline",
+              "label": "Titre principal",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_agency_hero_description",
+              "label": "Introduction",
+              "name": "description",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_agency_hero_actions",
+              "name": "actions",
+              "label": "Actions",
+              "type": "repeater",
+              "required": false,
+              "layout": "block",
+              "button_label": "Ajouter une action",
+              "sub_fields": [
+                {
+                  "key": "field_agency_page_agency_hero_actions_action",
+                  "label": "Action",
+                  "name": "action",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_bws_action_link"
+                  ],
+                  "display": "seamless",
+                  "prefix_name": 0,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            },
+            {
+              "key": "field_agency_page_agency_hero_primaryImage",
+              "name": "primaryImage",
+              "label": "Image principale",
+              "type": "image",
+              "required": false,
+              "return_format": "array",
+              "preview_size": "large"
+            },
+            {
+              "key": "field_agency_page_agency_hero_detailImage",
+              "name": "detailImage",
+              "label": "Image de détail",
+              "type": "image",
+              "required": false,
+              "return_format": "array",
+              "preview_size": "medium"
+            },
+            {
+              "key": "field_agency_page_agency_hero_imageCaption",
+              "label": "Légende",
+              "name": "imageCaption",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            }
+          ]
+        },
+        {
+          "key": "layout_agency_page_agency_profile",
+          "name": "agency_profile",
+          "label": "Agence — Présentation du cabinet",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/agency_profile.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_agency_page_agency_profile_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_agency_profile_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_agency_profile_lead",
+              "label": "Texte principal",
+              "name": "lead",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_agency_profile_paragraphs",
+              "name": "paragraphs",
+              "label": "Paragraphes complémentaires",
+              "type": "repeater",
+              "required": false,
+              "min": 1,
+              "max": 4,
+              "layout": "block",
+              "button_label": "Ajouter un paragraphe",
+              "sub_fields": [
+                {
+                  "key": "field_agency_page_agency_profile_paragraphs_text",
+                  "label": "Paragraphe",
+                  "name": "text",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_text_primitive"
+                  ],
+                  "display": "group",
+                  "prefix_name": 1,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            },
+            {
+              "key": "field_agency_page_agency_profile_image",
+              "name": "image",
+              "label": "Image du cabinet",
+              "type": "image",
+              "required": false,
+              "return_format": "array",
+              "preview_size": "large"
+            },
+            {
+              "key": "field_agency_page_agency_profile_imageCaption",
+              "label": "Légende",
+              "name": "imageCaption",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            }
+          ]
+        },
+        {
+          "key": "layout_agency_page_architectural_vision",
+          "name": "architectural_vision",
+          "label": "Agence — Vision architecturale",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/architectural_vision.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_agency_page_architectural_vision_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_architectural_vision_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_architectural_vision_introduction",
+              "label": "Introduction",
+              "name": "introduction",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_architectural_vision_image",
+              "name": "image",
+              "label": "Image de détail",
+              "type": "image",
+              "required": false,
+              "return_format": "array",
+              "preview_size": "large"
+            },
+            {
+              "key": "field_agency_page_architectural_vision_imageCaption",
+              "label": "Légende",
+              "name": "imageCaption",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_architectural_vision_principles",
+              "name": "principles",
+              "label": "Principes",
+              "type": "repeater",
+              "required": false,
+              "min": 1,
+              "max": 6,
+              "layout": "block",
+              "button_label": "Ajouter un principe",
+              "sub_fields": [
+                {
+                  "key": "field_agency_page_architectural_vision_principles_principleFields",
+                  "label": "Contenu",
+                  "name": "principleFields",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_bws_vision_principle_molecule"
+                  ],
+                  "display": "seamless",
+                  "prefix_name": 0,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "layout_agency_page_expertise_overview",
+          "name": "expertise_overview",
+          "label": "Accueil — Expertises",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/expertise_overview.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_agency_page_expertise_overview_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_expertise_overview_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_expertise_overview_introduction",
+              "label": "Introduction",
+              "name": "introduction",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_expertise_overview_items",
+              "name": "items",
+              "label": "Expertises",
+              "type": "repeater",
+              "required": false,
+              "min": 1,
+              "max": 8,
+              "layout": "block",
+              "button_label": "Ajouter une expertise",
+              "sub_fields": [
+                {
+                  "key": "field_agency_page_expertise_overview_items_itemFields",
+                  "label": "Contenu",
+                  "name": "itemFields",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_bws_expertise_item_molecule"
+                  ],
+                  "display": "seamless",
+                  "prefix_name": 0,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "layout_agency_page_architectural_approach",
+          "name": "architectural_approach",
+          "label": "Accueil — Approche architecturale",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/architectural_approach.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_agency_page_architectural_approach_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_architectural_approach_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_architectural_approach_introduction",
+              "label": "Introduction",
+              "name": "introduction",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_architectural_approach_principles",
+              "name": "principles",
+              "label": "Principes",
+              "type": "repeater",
+              "required": false,
+              "min": 1,
+              "max": 6,
+              "layout": "block",
+              "button_label": "Ajouter un principe",
+              "sub_fields": [
+                {
+                  "key": "field_agency_page_architectural_approach_principles_principleFields",
+                  "label": "Contenu",
+                  "name": "principleFields",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_bws_approach_step_molecule"
+                  ],
+                  "display": "seamless",
+                  "prefix_name": 0,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "layout_agency_page_project_call_to_action",
+          "name": "project_call_to_action",
+          "label": "Projet — Appel à l'action final",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/project_call_to_action.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_agency_page_project_call_to_action_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_project_call_to_action_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_project_call_to_action_description",
+              "label": "Description",
+              "name": "description",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_agency_page_project_call_to_action_actions",
+              "name": "actions",
+              "label": "Actions",
+              "type": "repeater",
+              "required": false,
+              "layout": "block",
+              "button_label": "Ajouter une action",
+              "sub_fields": [
+                {
+                  "key": "field_agency_page_project_call_to_action_actions_action",
+                  "label": "Action",
+                  "name": "action",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_bws_action_link"
+                  ],
+                  "display": "seamless",
+                  "prefix_name": 0,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            },
+            {
+              "key": "field_agency_page_project_call_to_action_image",
+              "name": "image",
+              "label": "Image",
+              "type": "image",
+              "required": false,
+              "return_format": "array",
+              "preview_size": "large"
+            },
+            {
+              "key": "field_agency_page_project_call_to_action_imageCaption",
+              "label": "Légende de l'image",
+              "name": "imageCaption",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "template-agency.php"
+      }
+    ]
+  ],
+  "show_in_rest": true,
+  "modified": 1792514841
+}

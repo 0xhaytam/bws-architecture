@@ -1,0 +1,57 @@
+{
+  "key": "group_lib_bws_project_tile_molecule",
+  "title": "[LIB] bws_project_tile_molecule",
+  "fields": [
+    {
+      "key": "field_bws_project_tile_molecule_title",
+      "label": "Nom du projet",
+      "name": "title",
+      "type": "clone",
+      "clone": [
+        "group_lib_heading_primitive"
+      ],
+      "display": "group",
+      "prefix_name": 1,
+      "prefix_label": 0,
+      "required": 0
+    },
+    {
+      "key": "field_bws_project_tile_molecule_category",
+      "label": "Catégorie",
+      "name": "category",
+      "type": "clone",
+      "clone": [
+        "group_lib_text_primitive"
+      ],
+      "display": "group",
+      "prefix_name": 1,
+      "prefix_label": 0,
+      "required": 0
+    },
+    {
+      "key": "field_bws_project_tile_molecule_description",
+      "label": "Légende",
+      "name": "description",
+      "type": "clone",
+      "clone": [
+        "group_lib_text_primitive"
+      ],
+      "display": "group",
+      "prefix_name": 1,
+      "prefix_label": 0,
+      "required": 0
+    },
+    {
+      "key": "field_bws_project_tile_molecule_image",
+      "name": "image",
+      "label": "Image",
+      "type": "image",
+      "required": false,
+      "return_format": "array",
+      "preview_size": "large"
+    }
+  ],
+  "active": false,
+  "show_in_rest": true,
+  "modified": 1792514841
+}

@@ -1,0 +1,28 @@
+---
+import Layout from "@/src/layouts/Layout.astro";
+import SectionBuilder from "@/src/lib/SectionBuilder.astro";
+import { getAllPages } from "@/src/lib/wp/pages";
+import type { RuntimePage } from "@/src/lib/wp/pageAdapter";
+
+export async function getStaticPaths() {
+  if (import.meta.env.SKIP_WORDPRESS === "true") {
+    return [];
+  }
+
+  const pages = await getAllPages();
+  if (!pages.length) throw new Error("WordPress returned no published pages");
+
+  return pages
+    .filter((page) => page.slug !== "home")
+    .map((page) => ({
+      params: { slug: page.path },
+      props: { page },
+    }));
+}
+
+const { page } = Astro.props as { page: RuntimePage };
+---
+
+<Layout slug={page.slug}>
+  <SectionBuilder sections={page.sections} />
+</Layout>

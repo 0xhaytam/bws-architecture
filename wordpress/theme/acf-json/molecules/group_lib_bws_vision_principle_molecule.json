@@ -1,0 +1,48 @@
+{
+  "key": "group_lib_bws_vision_principle_molecule",
+  "title": "[LIB] bws_vision_principle_molecule",
+  "fields": [
+    {
+      "key": "field_bws_vision_principle_molecule_label",
+      "label": "Repère",
+      "name": "label",
+      "type": "clone",
+      "clone": [
+        "group_lib_text_primitive"
+      ],
+      "display": "group",
+      "prefix_name": 1,
+      "prefix_label": 0,
+      "required": 0
+    },
+    {
+      "key": "field_bws_vision_principle_molecule_title",
+      "label": "Principe",
+      "name": "title",
+      "type": "clone",
+      "clone": [
+        "group_lib_heading_primitive"
+      ],
+      "display": "group",
+      "prefix_name": 1,
+      "prefix_label": 0,
+      "required": 0
+    },
+    {
+      "key": "field_bws_vision_principle_molecule_description",
+      "label": "Description",
+      "name": "description",
+      "type": "clone",
+      "clone": [
+        "group_lib_text_primitive"
+      ],
+      "display": "group",
+      "prefix_name": 1,
+      "prefix_label": 0,
+      "required": 0
+    }
+  ],
+  "active": false,
+  "show_in_rest": true,
+  "modified": 1792514841
+}

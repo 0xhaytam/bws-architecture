@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "BWS Heading";
+  src: url("/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BWS Content";
+  src: url("/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@theme {
+  --font-heading: "BWS Heading", "Avenir Next", "Segoe UI", sans-serif;
+  --font-content: "BWS Content", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+  --color-ink-950: #111111;
+  --color-ink-800: #2a2a28;
+  --color-grey-700: #555552;
+  --color-grey-500: #858580;
+  --color-grey-300: #c9c8c2;
+  --color-grey-150: #e7e5df;
+  --color-paper-50: #f5f3ee;
+  --color-paper-0: #fcfbf8;
+  --color-signal: #f65846;
+  --color-spatial: #007797;
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --text-t1: clamp(2.75rem, 5.2vw, 5rem);
+  --text-t1--line-height: 0.94;
+  --text-t1--letter-spacing: -0.052em;
+  --text-t2: clamp(2.4rem, 4vw, 4.25rem);
+  --text-t2--line-height: 0.98;
+  --text-t2--letter-spacing: -0.045em;
+  --text-t3: clamp(1.9rem, 2.8vw, 3rem);
+  --text-t3--line-height: 1.02;
+  --text-t3--letter-spacing: -0.038em;
+  --text-t4: clamp(1.5rem, 2vw, 2.1rem);
+  --text-t4--line-height: 1.08;
+  --text-t4--letter-spacing: -0.03em;
+  --text-t5: clamp(1.2rem, 1.4vw, 1.5rem);
+  --text-t5--line-height: 1.15;
+  --text-t5--letter-spacing: -0.022em;
+  --text-t6: 1rem;
+  --text-t6--line-height: 1.25;
+
+  --text-p1: clamp(1.08rem, 1.25vw, 1.25rem);
+  --text-p1--line-height: 1.6;
+  --text-p2: 1rem;
+  --text-p2--line-height: 1.65;
+  --text-p3: 0.875rem;
+  --text-p3--line-height: 1.6;
+  --text-c1: 0.75rem;
+  --text-c1--line-height: 1.45;
+  --text-c2: 0.6875rem;
+  --text-c2--line-height: 1.4;
+}
+
+:root {
+  color-scheme: light;
+  font-family: var(--font-content);
+  color: var(--color-ink-950);
+  background: var(--color-paper-50);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --page-gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --section-space: clamp(4.5rem, 7vw, 7.5rem);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-paper-50);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--color-paper-50);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  color: var(--color-paper-0);
+  background: var(--color-signal);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 4px;
+}
+
+[data-reveal] {
+  --reveal-delay: 0ms;
+  opacity: 1;
+  transform: none;
+}
+
+html[data-reveal-ready="true"] [data-reveal][data-reveal-state="hidden"] {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition: none;
+  will-change: opacity, transform;
+}
+
+html[data-reveal-ready="true"] [data-reveal][data-reveal-axis="x"][data-reveal-state="hidden"] {
+  transform: translate3d(22px, 0, 0);
+}
+
+html[data-reveal-ready="true"] [data-reveal][data-reveal-state="revealing"] {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 660ms var(--ease-editorial) var(--reveal-delay),
+    transform 660ms var(--ease-editorial) var(--reveal-delay);
+  will-change: opacity, transform;
+}
+
+html[data-reveal-ready="true"] [data-reveal][data-reveal-state="hidden"] [data-reveal-media] {
+  clip-path: inset(0 0 14% 0);
+}
+
+html[data-reveal-ready="true"] [data-reveal][data-reveal-state="revealing"] [data-reveal-media] {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 860ms var(--ease-editorial) var(--reveal-delay);
+}
+
+html[data-reveal-ready="true"] [data-reveal][data-reveal-state="hidden"] [data-reveal-rule] {
+  transform: scaleX(0);
+}
+
+html[data-reveal-ready="true"] [data-reveal][data-reveal-state="revealing"] [data-reveal-rule] {
+  transform: scaleX(1);
+  transition: transform 680ms var(--ease-editorial) calc(var(--reveal-delay) + 100ms);
+}
+
+@keyframes architectural-drift {
+  from {
+    transform: scale(1.025);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

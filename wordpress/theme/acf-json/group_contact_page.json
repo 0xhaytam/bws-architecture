@@ -1,0 +1,560 @@
+{
+  "key": "group_contact_page",
+  "title": "Page Contact",
+  "fields": [
+    {
+      "key": "field_contact_page_sections_flex",
+      "label": "Page Sections",
+      "name": "sections",
+      "type": "flexible_content",
+      "acfe_flexible_advanced": 1,
+      "acfe_flexible_copy_paste": 1,
+      "acfe_flexible_control": 1,
+      "acfe_flexible_duplicate": 1,
+      "acfe_flexible_layouts_templates": 1,
+      "acfe_flexible_layouts_previews": 1,
+      "layouts": [
+        {
+          "key": "layout_contact_page_contact_hero",
+          "name": "contact_hero",
+          "label": "Contact — Hero",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/contact_hero.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_contact_page_contact_hero_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_contact_hero_headline",
+              "label": "Titre principal",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_contact_hero_description",
+              "label": "Introduction",
+              "name": "description",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_contact_hero_actions",
+              "name": "actions",
+              "label": "Actions",
+              "type": "repeater",
+              "required": false,
+              "layout": "block",
+              "button_label": "Ajouter une action",
+              "sub_fields": [
+                {
+                  "key": "field_contact_page_contact_hero_actions_action",
+                  "label": "Action",
+                  "name": "action",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_bws_action_link"
+                  ],
+                  "display": "seamless",
+                  "prefix_name": 0,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            },
+            {
+              "key": "field_contact_page_contact_hero_image",
+              "name": "image",
+              "label": "Image principale",
+              "type": "image",
+              "required": false,
+              "return_format": "array",
+              "preview_size": "large"
+            },
+            {
+              "key": "field_contact_page_contact_hero_imageCaption",
+              "label": "Légende",
+              "name": "imageCaption",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            }
+          ]
+        },
+        {
+          "key": "layout_contact_page_project_submission",
+          "name": "project_submission",
+          "label": "Contact — Formulaire de projet",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/project_submission.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_contact_page_project_submission_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_project_submission_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_project_submission_introduction",
+              "label": "Introduction",
+              "name": "introduction",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_project_submission_guidance",
+              "label": "Texte d'accompagnement",
+              "name": "guidance",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_project_submission_submitLabel",
+              "name": "submitLabel",
+              "label": "Libellé du bouton",
+              "type": "text",
+              "required": false
+            },
+            {
+              "key": "field_contact_page_project_submission_privacyNote",
+              "label": "Note de confidentialité",
+              "name": "privacyNote",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            }
+          ]
+        },
+        {
+          "key": "layout_contact_page_contact_details",
+          "name": "contact_details",
+          "label": "Contact — Coordonnées du cabinet",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/contact_details.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_contact_page_contact_details_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_contact_details_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_contact_details_introduction",
+              "label": "Introduction",
+              "name": "introduction",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_contact_details_items",
+              "name": "items",
+              "label": "Coordonnées",
+              "type": "repeater",
+              "required": false,
+              "min": 1,
+              "max": 6,
+              "layout": "block",
+              "button_label": "Ajouter une coordonnée",
+              "sub_fields": [
+                {
+                  "key": "field_contact_page_contact_details_items_contactFields",
+                  "label": "Contenu",
+                  "name": "contactFields",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_bws_contact_channel_molecule"
+                  ],
+                  "display": "seamless",
+                  "prefix_name": 0,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "layout_contact_page_expertise_overview",
+          "name": "expertise_overview",
+          "label": "Accueil — Expertises",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/expertise_overview.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_contact_page_expertise_overview_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_expertise_overview_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_expertise_overview_introduction",
+              "label": "Introduction",
+              "name": "introduction",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_expertise_overview_items",
+              "name": "items",
+              "label": "Expertises",
+              "type": "repeater",
+              "required": false,
+              "min": 1,
+              "max": 8,
+              "layout": "block",
+              "button_label": "Ajouter une expertise",
+              "sub_fields": [
+                {
+                  "key": "field_contact_page_expertise_overview_items_itemFields",
+                  "label": "Contenu",
+                  "name": "itemFields",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_bws_expertise_item_molecule"
+                  ],
+                  "display": "seamless",
+                  "prefix_name": 0,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "layout_contact_page_contact_location",
+          "name": "contact_location",
+          "label": "Contact — Zone d'intervention",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/contact_location.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_contact_page_contact_location_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_contact_location_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_contact_location_introduction",
+              "label": "Introduction",
+              "name": "introduction",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_contact_location_mapEmbedUrl",
+              "name": "mapEmbedUrl",
+              "label": "URL d'intégration Google Maps",
+              "type": "url",
+              "required": false
+            },
+            {
+              "key": "field_contact_page_contact_location_address",
+              "label": "Adresse",
+              "name": "address",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_contact_location_serviceNote",
+              "label": "Zone d'intervention",
+              "name": "serviceNote",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_contact_location_directionsAction",
+              "label": "Lien d'itinéraire",
+              "name": "directionsAction",
+              "type": "clone",
+              "clone": [
+                "group_lib_bws_action_link"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            }
+          ]
+        },
+        {
+          "key": "layout_contact_page_contact_reassurance",
+          "name": "contact_reassurance",
+          "label": "Contact — Premier échange",
+          "display": "block",
+          "acfe_flexible_render_template": "acf-previews/sections/contact_reassurance.php",
+          "acfe_flexible_render_style": "acf-previews/preview.css",
+          "acfe_flexible_render_script": "acf-previews/preview.js",
+          "sub_fields": [
+            {
+              "key": "field_contact_page_contact_reassurance_kicker",
+              "label": "Repère",
+              "name": "kicker",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_contact_reassurance_headline",
+              "label": "Titre",
+              "name": "headline",
+              "type": "clone",
+              "clone": [
+                "group_lib_heading_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_contact_reassurance_description",
+              "label": "Description",
+              "name": "description",
+              "type": "clone",
+              "clone": [
+                "group_lib_text_primitive"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            },
+            {
+              "key": "field_contact_page_contact_reassurance_points",
+              "name": "points",
+              "label": "Points de cadrage",
+              "type": "repeater",
+              "required": false,
+              "min": 0,
+              "max": 4,
+              "layout": "block",
+              "button_label": "Ajouter un point",
+              "sub_fields": [
+                {
+                  "key": "field_contact_page_contact_reassurance_points_title",
+                  "label": "Titre",
+                  "name": "title",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_heading_primitive"
+                  ],
+                  "display": "group",
+                  "prefix_name": 1,
+                  "prefix_label": 0,
+                  "required": 0
+                },
+                {
+                  "key": "field_contact_page_contact_reassurance_points_description",
+                  "label": "Description",
+                  "name": "description",
+                  "type": "clone",
+                  "clone": [
+                    "group_lib_text_primitive"
+                  ],
+                  "display": "group",
+                  "prefix_name": 1,
+                  "prefix_label": 0,
+                  "required": 0
+                }
+              ]
+            },
+            {
+              "key": "field_contact_page_contact_reassurance_action",
+              "label": "Action",
+              "name": "action",
+              "type": "clone",
+              "clone": [
+                "group_lib_bws_action_link"
+              ],
+              "display": "group",
+              "prefix_name": 1,
+              "prefix_label": 0,
+              "required": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "template-contact.php"
+      }
+    ]
+  ],
+  "show_in_rest": true,
+  "modified": 1792514841
+}

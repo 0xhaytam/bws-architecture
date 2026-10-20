@@ -1,0 +1,3 @@
+TURNSTILE_SECRET_KEY=
+FORMS_HMAC_SECRET=
+WP_CMS_URL=https://wordpress.example.com

@@ -1,0 +1,12 @@
+---
+import Layout from "@/src/layouts/Layout.astro";
+import SectionBuilder from "@/src/lib/SectionBuilder.astro";
+import { getPageBySlug } from "@/src/lib/wp/pages";
+
+const skipWordPress = import.meta.env.SKIP_WORDPRESS === "true";
+const page = skipWordPress ? null : await getPageBySlug("home");
+---
+
+<Layout slug="">
+  <SectionBuilder sections={page?.sections || []} />
+</Layout>

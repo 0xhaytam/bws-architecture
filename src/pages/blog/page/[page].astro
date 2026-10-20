@@ -1,0 +1,25 @@
+---
+import { BlogListing } from "@/src/components/organisms/BlogListing";
+import Layout from "@/src/layouts/Layout.astro";
+import { getPostsPage, POSTS_PER_PAGE } from "@/src/lib/wp/posts";
+
+export async function getStaticPaths() {
+  const { totalPages } = await getPostsPage(1, POSTS_PER_PAGE);
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => {
+    const page = index + 2;
+    return { params: { page: String(page) }, props: { page } };
+  });
+}
+
+const { page } = Astro.props as { page: number };
+const result = await getPostsPage(page, POSTS_PER_PAGE);
+---
+
+<Layout
+  slug="blog"
+  canonicalPath={`/blog/page/${page}`}
+  title={`Blog — Page ${page} | BWS Architecture`}
+  description={`Page ${page} des articles et réflexions de BWS Architecture.`}
+>
+  <BlogListing {...result} page={page} />
+</Layout>

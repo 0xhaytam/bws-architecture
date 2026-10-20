@@ -1,0 +1,33 @@
+---
+import { getComponent } from "./componentRegistry";
+import { HydratedSection } from "./HydratedSection";
+import { transformAcfData } from "./transformAcfAtoms";
+import { sectionNeedsVisibleHydration } from "./sectionHydration";
+import type { RuntimeSection } from "./types/RuntimeSection";
+
+interface Props {
+  sections: RuntimeSection[];
+}
+
+const { sections } = Astro.props;
+---
+
+{
+  !sections?.length ? null : (
+    sections.map((section) => {
+      const { acf_fc_layout, ...rest } = section;
+      const Component = getComponent(acf_fc_layout);
+
+      if (!Component) {
+        console.error("Component not found: " + acf_fc_layout);
+        return null;
+      }
+
+      const transformed = transformAcfData(rest);
+      const componentProps = transformed as Record<string, any>;
+      return sectionNeedsVisibleHydration(acf_fc_layout)
+        ? <HydratedSection client:visible layout={acf_fc_layout} componentProps={componentProps} />
+        : <Component {...componentProps} />;
+    })
+  )
+}

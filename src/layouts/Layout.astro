@@ -1,0 +1,59 @@
+---
+import "../styles/global.css";
+import { publicCanonicalUrl } from "../lib/wp/head";
+import { getPageHead } from "../lib/wp/pages";
+import { SiteHeader } from "../components/organisms/SiteHeader";
+import { SiteFooter } from "../components/organisms/SiteFooter";
+import {
+  fallbackFooterMenu,
+  fallbackMainMenu,
+  getMenuByLocation,
+} from "../lib/wp/menus";
+
+interface Props {
+  slug: string;
+  canonicalPath?: string;
+  title?: string;
+  description?: string;
+  demo?: boolean;
+}
+
+const { slug, canonicalPath, title, description, demo = false } = Astro.props;
+const skipWordPress = import.meta.env.SKIP_WORDPRESS === "true";
+const head = skipWordPress ? "" : await getPageHead(slug, { canonicalPath });
+const fallbackCanonical =
+  canonicalPath && !/<link\b(?=[^>]*\brel=["']canonical["'])/i.test(head)
+    ? publicCanonicalUrl(import.meta.env.PUBLIC_SITE_URL, canonicalPath)
+    : "";
+const [mainMenu, footerMenu] = skipWordPress
+  ? [fallbackMainMenu, fallbackFooterMenu]
+  : await Promise.all([
+      getMenuByLocation("main-menu"),
+      getMenuByLocation("footer"),
+    ]);
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    {head ? <Fragment set:html={head} /> : title ? <title>{title}</title> : null}
+    {!head && description ? <meta name="description" content={description} /> : null}
+    {fallbackCanonical ? <link rel="canonical" href={fallbackCanonical} /> : null}
+    {demo ? <meta name="robots" content="noindex,nofollow" /> : null}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    {demo ? <div class="bg-signal px-4 py-2 text-center font-mono text-c2 font-semibold text-ink-950">Contenu fictif — aperçu de développement</div> : null}
+    <SiteHeader items={mainMenu} />
+    <main><slot /></main>
+    <SiteFooter items={footerMenu} />
+    <script>
+      import { initRevealController } from "../lib/revealController";
+      import { initHeaderDropdowns } from "../lib/headerDropdowns";
+      initRevealController();
+      initHeaderDropdowns();
+    </script>
+  </body>
+</html>

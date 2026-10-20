@@ -1,0 +1,28 @@
+.acf-field.atelier-icon-picker .acf-input {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 42px;
+  gap: 8px;
+  align-items: center;
+}
+
+.atelier-icon-picker__preview {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid #dcdcde;
+  border-radius: 4px;
+  background: #fff;
+  color: #1d2327;
+}
+
+.atelier-icon-picker__preview:empty::before {
+  content: "—";
+  color: #8c8f94;
+}
+
+.atelier-icon-picker__preview img {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
