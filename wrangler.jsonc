@@ -11,5 +11,11 @@
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page",
     "run_worker_first": ["/api/forms/*"]
+  },
+  "vars": {
+    "PUBLIC_SITE_URL": "bws-architecture.com",
+    "PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAAFd_Fwn6awR3rhcv",
+    "WP_CMS_URL": "cms.bws-architecture.com",
+    "WP_MEDIA_DOMAIN": "media.bws-architecture.com"
   }
 }
