@@ -3,6 +3,7 @@ import type { TextData } from "@/src/components/primitives/Text";
 import type { MediaData } from "@/src/components/contentTypes";
 import { Heading } from "@/src/components/primitives/Heading";
 import { Text } from "@/src/components/primitives/Text";
+import { responsiveImageAttributes } from "@/src/lib/image";
 import { expertiseFocusItemStyles } from "./base";
 
 export interface ExpertiseFocusItemProps {
@@ -19,7 +20,7 @@ export function ExpertiseFocusItem({ label, title, description, image, index, re
   return (
     <article className={styles.root()}>
       <div className={styles.media()}>
-        {image?.url ? <img className={styles.image()} src={image.url} alt={image.alt || title?.content || ""} loading="lazy" /> : <span className={styles.imageFallback()} aria-hidden="true" />}
+        {image?.url ? <img className={styles.image()} {...responsiveImageAttributes(image.url, { sizes: "(max-width: 768px) 100vw, 50vw", originalWidth: image.width })} alt={image.alt || title?.content || ""} loading="lazy" /> : <span className={styles.imageFallback()} aria-hidden="true" />}
         <Text as="span" level="c2" className={styles.imageIndex()}>{String(index + 1).padStart(2, "0")}</Text>
       </div>
       <div className={styles.content()}>

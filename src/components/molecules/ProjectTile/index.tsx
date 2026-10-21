@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { m, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { Heading } from "@/src/components/primitives/Heading";
 import { Text } from "@/src/components/primitives/Text";
+import { responsiveImageAttributes } from "@/src/lib/image";
 import { projectTileStyles } from "./base";
 
 export type ProjectTileProps = any & {
@@ -28,7 +29,7 @@ export function ProjectTile({ title, category, description, image, index, format
         className={styles.media()}
         data-reveal-media
       >
-        <m.img className={styles.image()} style={reduceMotion ? undefined : { y: imageY }} src={image.url} alt={image.alt || `${title?.content || "Projet"} — ${category?.content || "Architecture"}`} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : "auto"} />
+        <m.img className={styles.image()} style={reduceMotion ? undefined : { y: imageY }} {...responsiveImageAttributes(image.url, { sizes: "(max-width: 768px) 100vw, 50vw" })} alt={image.alt || `${title?.content || "Projet"} — ${category?.content || "Architecture"}`} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : "auto"} />
         <span className={styles.imageIndex()} aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
       </div>
       <div className={styles.meta()}>

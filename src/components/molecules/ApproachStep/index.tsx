@@ -3,6 +3,7 @@ import { m, useReducedMotion } from "motion/react";
 import { Heading } from "@/src/components/primitives/Heading";
 import { Icon } from "@/src/components/primitives/Icon";
 import { Text } from "@/src/components/primitives/Text";
+import { responsiveImageAttributes } from "@/src/lib/image";
 import { approachStepStyles } from "./base";
 
 export type ApproachStepProps = any & {
@@ -28,7 +29,7 @@ export function ApproachStep({ icon, image, label, title, description, fallbackI
         {image?.url ? (
           <m.img
             className={styles.image()}
-            src={image.url}
+            {...responsiveImageAttributes(image.url, { sizes: "(max-width: 1024px) 88vw, 50vw" })}
             alt={image.alt || title?.content || ""}
             loading="lazy"
             whileHover={reduceMotion ? undefined : { scale: 1.025 }}

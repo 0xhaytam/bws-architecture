@@ -1,6 +1,7 @@
 import { Container } from "@/src/components/primitives/Container";
 import { Heading } from "@/src/components/primitives/Heading";
 import type { RuntimePost } from "@/src/lib/wp/posts";
+import { responsiveImageAttributes } from "@/src/lib/image";
 import { blogArticleStyles } from "./base";
 
 export interface BlogArticleProps { post: RuntimePost }
@@ -27,7 +28,10 @@ export function BlogArticle({ post }: BlogArticleProps) {
           <figure className={styles.media()}>
             <img
               className={styles.image()}
-              src={post.featuredImage.url}
+              {...responsiveImageAttributes(post.featuredImage.url, {
+                sizes: "(max-width: 1280px) 100vw, 1200px",
+                originalWidth: post.featuredImage.width,
+              })}
               alt={post.featuredImage.alt}
               width={post.featuredImage.width}
               height={post.featuredImage.height}

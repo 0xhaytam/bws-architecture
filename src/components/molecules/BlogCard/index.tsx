@@ -1,6 +1,7 @@
 import type { RuntimePost } from "@/src/lib/wp/posts";
 import { Heading } from "@/src/components/primitives/Heading";
 import { Text } from "@/src/components/primitives/Text";
+import { responsiveImageAttributes } from "@/src/lib/image";
 import { blogCardStyles } from "./base";
 
 export interface BlogCardProps {
@@ -23,7 +24,10 @@ export function BlogCard({ post, index }: BlogCardProps) {
           {post.featuredImage?.url ? (
             <img
               className={styles.image()}
-              src={post.featuredImage.url}
+              {...responsiveImageAttributes(post.featuredImage.url, {
+                sizes: "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+                originalWidth: post.featuredImage.width,
+              })}
               alt={post.featuredImage.alt}
               loading="lazy"
               width={post.featuredImage.width}

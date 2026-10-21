@@ -8,6 +8,7 @@ import { SectionHeader } from "@/src/components/molecules/SectionHeader";
 import { Container } from "@/src/components/primitives/Container";
 import { Reveal } from "@/src/components/primitives/Reveal";
 import { Text } from "@/src/components/primitives/Text";
+import { responsiveImageAttributes } from "@/src/lib/image";
 import { architecturalVisionStyles } from "./base";
 
 export interface ArchitecturalVisionProps {
@@ -32,7 +33,7 @@ export function ArchitecturalVision({ kicker, headline, introduction, image, ima
         </Reveal>
         <div className={styles.layout()}>
           <Reveal className={styles.media()}>
-            {image?.url ? <img className={styles.image()} src={image.url} alt={image.alt || headline?.content || ""} loading="lazy" /> : null}
+            {image?.url ? <img className={styles.image()} {...responsiveImageAttributes(image.url, { sizes: "(max-width: 768px) 100vw, 50vw", originalWidth: image.width })} alt={image.alt || headline?.content || ""} loading="lazy" /> : null}
             <span className={styles.imageRule()} aria-hidden="true" />
             {imageCaption ? <Text {...imageCaption} level={imageCaption.level || "c2"} className={styles.caption()} /> : null}
           </Reveal>

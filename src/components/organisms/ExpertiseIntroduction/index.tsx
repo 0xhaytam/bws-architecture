@@ -5,6 +5,7 @@ import { Container } from "@/src/components/primitives/Container";
 import { Heading } from "@/src/components/primitives/Heading";
 import { Reveal } from "@/src/components/primitives/Reveal";
 import { Text } from "@/src/components/primitives/Text";
+import { responsiveImageAttributes } from "@/src/lib/image";
 import { expertiseIntroductionStyles } from "./base";
 
 export interface ExpertiseIntroductionProps {
@@ -33,7 +34,7 @@ export function ExpertiseIntroduction({ kicker, headline, lead, paragraphs, imag
             </div>
           </Reveal>
           <Reveal className={styles.media()} delay={0.08}>
-            {image?.url ? <img className={styles.image()} src={image.url} alt={image.alt || "Détail architectural"} loading="lazy" /> : <span className={styles.imageFallback()} aria-hidden="true" />}
+            {image?.url ? <img className={styles.image()} {...responsiveImageAttributes(image.url, { sizes: "(max-width: 768px) 100vw, 50vw", originalWidth: image.width })} alt={image.alt || "Détail architectural"} loading="lazy" /> : <span className={styles.imageFallback()} aria-hidden="true" />}
             {imageCaption ? <Text {...imageCaption} level={imageCaption.level || "c2"} className={styles.caption()} /> : null}
           </Reveal>
         </div>

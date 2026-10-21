@@ -5,6 +5,7 @@ import { SectionHeader } from "@/src/components/molecules/SectionHeader";
 import { Container } from "@/src/components/primitives/Container";
 import { Reveal } from "@/src/components/primitives/Reveal";
 import { Text } from "@/src/components/primitives/Text";
+import { responsiveImageAttributes } from "@/src/lib/image";
 import { expertiseOverviewStyles } from "./base";
 
 export type ExpertiseOverviewProps = any;
@@ -28,7 +29,7 @@ export function ExpertiseOverview({ kicker, headline, introduction, items }: Exp
                     <m.img
                       key={`${activeIndex}-${activeItem.image.url}`}
                       className={styles.previewImage()}
-                      src={activeItem.image.url}
+                      {...responsiveImageAttributes(activeItem.image.url, { sizes: "(max-width: 1024px) 100vw, 42vw" })}
                       alt={activeItem.image.alt || ""}
                       loading="lazy"
                       initial={false}

@@ -28,6 +28,9 @@ export default defineConfig({
     ],
   },
   vite: {
+    // The media hostname is public configuration used by hydrated image
+    // components to build Cloudflare transformation URLs.
+    envPrefix: ["PUBLIC_", "WP_MEDIA_DOMAIN"],
     plugins: [tailwindcss()],
     ssr: { noExternal: ["lucide-react"] },
     resolve: { alias: { "@": fileURLToPath(new URL(".", import.meta.url)) } },

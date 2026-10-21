@@ -7,6 +7,7 @@ import { Container } from "@/src/components/primitives/Container";
 import { Heading } from "@/src/components/primitives/Heading";
 import { Reveal } from "@/src/components/primitives/Reveal";
 import { Text } from "@/src/components/primitives/Text";
+import { responsiveImageAttributes } from "@/src/lib/image";
 import { homeHeroStyles } from "./base";
 
 export interface HomeHeroProps { kicker?: TextData; headline?: HeadingData; description?: TextData; actions?: ActionLinkData[]; image?: MediaData; imageCaption?: TextData }
@@ -27,7 +28,7 @@ export function HomeHero({ kicker, headline, description, actions, image, imageC
       </Reveal>
       {image?.url ? <Reveal className={styles.mediaColumn()} delay={0.08} repeat={false}>
         <span className={styles.signal()} aria-hidden="true" /><div className={styles.media()}>
-          <img className={styles.image()} src={image.url} alt={image.alt || "Architecture contemporaine à Rabat"} width="1400" height="1700" loading="eager" fetchPriority="high" />
+          <img className={styles.image()} {...responsiveImageAttributes(image.url, { sizes: "(max-width: 1024px) 100vw, 50vw", originalWidth: image.width, defaultWidth: 1600 })} alt={image.alt || "Architecture contemporaine à Rabat"} width={image.width || 1400} height={image.height || 1700} loading="eager" fetchPriority="high" />
           <Text level="c2" {...imageCaption} className={styles.caption()} />
         </div>
       </Reveal> : null}

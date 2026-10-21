@@ -4,6 +4,7 @@ import { ContactForm } from "@/src/components/molecules/ContactForm";
 import { Heading } from "@/src/components/primitives/Heading";
 import { Reveal } from "@/src/components/primitives/Reveal";
 import { Text } from "@/src/components/primitives/Text";
+import { responsiveImageAttributes } from "@/src/lib/image";
 import { projectInvitationStyles } from "./base";
 
 export type ProjectInvitationProps = any;
@@ -14,7 +15,7 @@ export function ProjectInvitation({ kicker, headline, description, image, imageC
   return (
     <section id="projet" className={styles.root()} aria-labelledby="invitation-title">
       <Reveal className={styles.media()}>
-        {image?.url ? <img className={styles.image()} src={image.url} alt={image.alt || "Architecture contemporaine à Rabat"} loading="lazy" /> : null}
+        {image?.url ? <img className={styles.image()} {...responsiveImageAttributes(image.url, { sizes: "(max-width: 1024px) 100vw, 50vw" })} alt={image.alt || "Architecture contemporaine à Rabat"} loading="lazy" /> : null}
         <span className={styles.mediaTint()} aria-hidden="true" />
         {imageCaption ? <Text {...imageCaption} level={imageCaption.level || "c2"} className={styles.caption()} /> : null}
         <div className={styles.contactCard()}>

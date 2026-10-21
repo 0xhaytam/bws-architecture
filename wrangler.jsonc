@@ -12,10 +12,11 @@
     "not_found_handling": "404-page",
     "run_worker_first": ["/api/forms/*"]
   },
+  "preview_urls": false,
   "vars": {
-    "PUBLIC_SITE_URL": "bws-architecture.com",
+    "PUBLIC_SITE_URL": "https://bws-architecture.com",
     "PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAAFd_Fwn6awR3rhcv",
-    "WP_CMS_URL": "cms.bws-architecture.com",
+    "WP_CMS_URL": "https://cms.bws-architecture.com",
     "WP_MEDIA_DOMAIN": "media.bws-architecture.com"
   }
 }

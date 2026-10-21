@@ -6,6 +6,7 @@ import { SectionHeader } from "@/src/components/molecules/SectionHeader";
 import { Container } from "@/src/components/primitives/Container";
 import { Reveal } from "@/src/components/primitives/Reveal";
 import { Text } from "@/src/components/primitives/Text";
+import { responsiveImageAttributes } from "@/src/lib/image";
 import { agencyProfileStyles } from "./base";
 
 export interface AgencyProfileProps {
@@ -36,7 +37,7 @@ export function AgencyProfile({ kicker, headline, lead, paragraphs, image, image
           </Reveal>
         </div>
         <Reveal className={styles.media()}>
-          {image?.url ? <img className={styles.image()} src={image.url} alt={image.alt || "Cabinet d’architecture BWS"} loading="lazy" /> : null}
+          {image?.url ? <img className={styles.image()} {...responsiveImageAttributes(image.url, { sizes: "(max-width: 768px) 100vw, 80vw", originalWidth: image.width })} alt={image.alt || "Cabinet d’architecture BWS"} loading="lazy" /> : null}
           <span className={styles.frame()} aria-hidden="true" />
           {imageCaption ? <Text {...imageCaption} level={imageCaption.level || "c2"} className={styles.caption()} /> : null}
         </Reveal>

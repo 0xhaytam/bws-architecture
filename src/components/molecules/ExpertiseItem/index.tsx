@@ -4,6 +4,7 @@ import { resolveActionLink } from "@/src/components/primitives/ActionLink";
 import { Heading } from "@/src/components/primitives/Heading";
 import { Icon } from "@/src/components/primitives/Icon";
 import { Text } from "@/src/components/primitives/Text";
+import { responsiveImageAttributes } from "@/src/lib/image";
 import { expertiseItemStyles } from "./base";
 
 export type ExpertiseItemProps = any & {
@@ -24,7 +25,7 @@ export function ExpertiseItem({ title, description, image, destination, index, a
         <Text {...description} className={styles.description()} />
       </div>
       <span className={styles.mark()} aria-hidden="true"><Icon name="ArrowUpRight" size="md" /></span>
-      {image?.url ? <div className={styles.mobileMedia()}><img className={styles.image()} src={image.url} alt={image.alt || ""} loading="lazy" /></div> : null}
+      {image?.url ? <div className={styles.mobileMedia()}><img className={styles.image()} {...responsiveImageAttributes(image.url, { sizes: "100vw" })} alt={image.alt || ""} loading="lazy" /></div> : null}
     </>
   );
   return link?.url ? (
