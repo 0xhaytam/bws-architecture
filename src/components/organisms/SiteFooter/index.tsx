@@ -40,7 +40,7 @@ export function SiteFooter({ items }: SiteFooterProps) {
             <img className={styles.logo()} src="/bws-logo-dark.svg" alt="BWS Architecture" width="269" height="85" />
             <Text level="p3" className={styles.statement()}>
               Cabinet d&apos;architecture à Rabat. Une pratique sobre, précise et attentive aux usages, à la lumière et
-              à la durée.
+              à la durabilité.
             </Text>
           </div>
           <div className={styles.contact()}>
